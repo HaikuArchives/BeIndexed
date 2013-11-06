@@ -1,0 +1,34 @@
+BeIndexed
+
+What is it?
+------------
+Google on your desktop, only not as smart or quick! :)
+
+
+Usage instructions for BeIndexed
+----------------------------------------
+
+The applications are in the bin folder.
+
+Indexing - no GUI so far, so you'll have to run it from a Terminal:
+
+Run "Indexer [path to folder to index, for example /boot/home]". This will index the folder
+and all it's subfolders. If there's a folder you wish that Indexer should ignore, you can set
+a string attribute named "BeIndexed:Rule" to "ignore" on it and it will be ignored.
+So far you'll have to do this manually from a Terminal using something like "addattr", not
+sure if that's included in all BeOS versions or not.
+
+Finding:
+
+Run Finder, enter some words, double-click the matches.
+It would be a good idea to not have the indexer running while you're doing this, since I had
+to remove the file locking from SQLite to make it work. Worst case scenario: Finder gets
+lost and crashes. The Indexer should have no problems.
+
+Author
+--------
+Mikael Eiman, mikael@eiman.tv
+
+License
+---------
+BSD-style.
