@@ -60,11 +60,6 @@ class SQLConnection
 
 #ifdef USE_SQLITE
 
-#ifndef usleep
-#define ADD_usleep
-extern "C" void usleep( unsigned long t );
-#endif
-
 #include "sqlite3.h"
 
 class SQLiteConnection : public SQLConnection

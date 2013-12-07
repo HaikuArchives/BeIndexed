@@ -6,13 +6,6 @@
 
 #ifdef USE_SQLITE
 
-#ifdef ADD_usleep
-extern "C" void usleep( unsigned long t )
-{
-	snooze(t);
-}
-#endif
-
 int my_sqlite_callback( 
 	void * _data, 
 	int numCols, 

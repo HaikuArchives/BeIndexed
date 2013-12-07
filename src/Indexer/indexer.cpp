@@ -629,7 +629,7 @@ main(int numArg, char ** argv)
 {
 	set_thread_priority( find_thread(NULL), B_LOW_PRIORITY );
 	
-	system("mkdir -p /boot/home/config/data/BeIndexed");
+	system("mkdir -p `finddir B_USER_NONPACKAGED_DATA_DIRECTORY`/BeIndexed");
 	
 	init_sql();
 	init_stop_words();
