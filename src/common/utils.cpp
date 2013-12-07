@@ -1,6 +1,8 @@
 #include "utils.h"
 
 #include <algorithm>
+#include <FindDirectory.h>
+#include <Path.h>
 #include <String.h>
 
 string
@@ -225,7 +227,11 @@ SQLConnection * g_sql=NULL;
 #ifdef USE_SQLITE
 void init_sql()
 {
-	g_sql = new SQLiteConnection("/boot/home/config/data/BeIndexed/BeIndexed.db");
+	BPath path;
+	find_directory(B_USER_NONPACKAGED_DATA_DIRECTORY, &path);
+	path.Append("BeIndexed");
+	path.Append("BeIndexed.db");
+	g_sql = new SQLiteConnection(path.Path());
 	// set up tables. This shouldn't harm already existing tables.
 	// wordtable
 	g_sql->Exec("CREATE TABLE wordTable (id integer primary key, word text)");

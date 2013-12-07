@@ -6,7 +6,7 @@ DIST:=beindexed-$(VERSION)
 SUBDIRS = \
 	src
 
-IMKIT_HEADERS=$(addprefix /boot/home/config/include/, $(wildcard libim/*.h))
+# IMKIT_HEADERS=$(addprefix /boot/home/config/include/, $(wildcard libim/*.h))
 
 .PHONY: default clean install dist common
 
